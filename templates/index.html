@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<!--Meta tags-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+<!--Google fonts-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+
+<!--Font Awesome-->
+<script src="https://kit.fontawesome.com/985d643963.js" crossorigin="anonymous"></script>
+
+<!--Material icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+<!--Load Django assets-->
+{% load static %}
+
+<!--CSS Stylesheets-->
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+<!--Native javascript-->
+<script type="text/javascript" src="{% static 'javascript/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascript/scalable.js' %}"></script>
+
+<html>
+	<head>
+		
+		<title>YT Downloader 1.0</title>
+
+	</head>
+
+	<body>
+		
+		<!--Top bar, contains logo and mp3 switch. Width dependent on view width-->
+		<div id="top-container" class="top-container-large">
+
+			<!--Div that contains logo and title-->
+			<div id="logo-box" class="logo-box-small">
+				<div id="title-container" class="small-title" style="line-height:2.2rem">YouTube<br> Downloader 1.0</div>
+			</div>
+
+		</div>
+
+
+		<!--Primary form-->
+		{% block form %}
+			<form action="javascript:void(0)" method="POST" id="main-form">
+
+				<!--CSRF Token-->
+				{% csrf_token %}
+
+				<!--Main search div-->
+				<div id="search-div">
+
+					<input type="text" class="search-bar-large" id="link" name="YT_link" placeholder="Type a YouTube Link">
+
+				</div>
+
+				<!--Popup raising button-->
+				<div id="submission-container" class="download-button-large">
+					<div id="submission-button" class="download-button-large">Download<span class="fas fa-download"></span></div>
+				</div>
+
+				<!--Paste link button for smaller screens-->
+				<div class="paste-container-hidden" id="paste-button">
+					<div id="paste-link-button" class=".paste-link-hidden">
+						<div id="paste-link-text"><span class="fas fa-paste"></span><br>Click Here To Paste a Link</div>
+					</div>
+				</div>
+
+				<div id="download-container" class="download-container-large">
+
+					<div id="slide-up">
+						<!--TODO: Switch to a material design switch-->
+						<div id="switch-container" class="">
+							<input type="checkbox" id="audio" name="audio" value="Download Audio Only">
+							<span class="checkmark"></span>
+						</div>
+
+						<!--Two inputs for clipping range-->
+						<div id="clip-div-container" class="clip-div-hidden" style="visibility: hidden;">
+							<div id="clip-div" class='clip-div-large'>
+								<input type="text" class="time-stmp-1" name="time_stmp_1" value="00:00"> <span id="to">To</span>
+								<input type="text" class="time-stmp-2" name="time_stmp_2" value="00:00">
+							</div>
+						</div>
+
+						<!--Modal overlay-->
+						<div id="modal-overlay"></div>
+
+					</div>
+
+					<!--Modal for download actions-->
+					<div id="modal" class="invisible-modal large-modal">
+
+						<!--Div that contains the title and channel-->
+						<div id="title-div" class="small-title">
+							
+								<div id="primary-title" class="small-primary">Placeholder Video</div>
+
+								<div id="channel" class="small-channel">by <span id="author">Placeholder</span></div>
+
+						</div>
+
+						<!--Youtube thumbnail image, empty initially-->
+						<img src="" id="thumbnail" class="standard-thumbnail">
+
+						<!--Actual Download Button-->
+						<input type="submit" value="Download" id="download-button">
+
+						<!--Toggle switch for mp3 and mp4 downloads, contains two sub-divs for right and left tiles-->
+						<div id="toggle-switch">
+							
+							<div id="left-tile" class="unfocused-tile">Save as Mp3</div>
+
+							<div id="right-tile" class="focused-tile">Save as Mp4</div>
+
+						</div>
+
+						<!--Modal exit button-->
+						<div id="modal-exit">
+							<span class="fas fa-times"></span>
+						</div> 
+
+						<!--Modal clip button-->
+						<div id="modal-settings">
+							<i class="fas fa-sliders-h"></i>
+						</div> 
+
+					</div>
+
+					<!--Settings sidebar-->
+					<div id="settings-container">
+						<div class="settings-large settings-hidden" id="settings-sidebar">
+
+							<!--Container for the quality selector-->
+							<div id="quality-selector" class="quality-selector-large" disabled="true">
+								<select id="internal-selector" name="quality">
+									<option value="1080p">1080p</option>
+									<option value="720p">720p</option>
+									<option value="480p">480p</option>
+									<option value="360p">360p</option>
+									<option value="240p">240p</option>
+								</select>
+							</div>
+
+							<!--Container div for the clip timestamp selector-->
+							<div id="clip-div" class="clip-div-large"></div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</form>
+		{% endblock %}
+
+			<div id="loading-div" class="loading-div-large">
+				<span id="loading-text"></span>
+				<span id="loading-animation"></span> 
+			</div>
+
+	</body>
+
+
+</html>

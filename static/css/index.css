@@ -1,0 +1,853 @@
+/*Body styling*/
+body{
+
+	/*Margins*/
+	margin:0;
+
+	/*Coloring*/
+	background:#b31217;
+	overflow: hidden;
+
+}
+
+/*Styling for the nav-bar at the top of the page*/
+.top-container-large{
+
+	/*Coloring*/
+	background:#b31217;
+
+	/*Positioning*/
+	display:table;
+	position:fixed;
+	text-align:center;
+	top:0;
+	width:100%;
+
+	/*Dimensions*/
+	height:9em;
+
+	/*Shading*/
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+
+/*Styling for logo-box*/
+.top-container-large .logo-box-small{
+
+	/*Coloring*/
+	color:white;
+
+	/*Font*/
+	font-family:'Press Start 2P';
+	font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+	font-style: italic; 
+
+	/*Positioning*/
+	display:table-cell;
+	position:relative;
+	vertical-align: middle;
+
+}
+
+/*Material design save icon*/
+.download-icon-small{
+
+	/*Sizing*/
+	font-size:30px;
+	height:20px;
+
+}
+
+/*Search bar container*/
+#search-div{
+
+	/*Positioning*/
+	position:fixed;
+	top:13em;
+	text-align:center;
+
+	/*Dimensions*/
+	width:100%;
+
+}
+
+/*Search div input for large screens*/
+#search-div .search-bar-large{
+
+	/*Positioning*/
+	display: inline-block;
+	margin:0px;
+
+	/*Dimensions*/
+	width:85%;
+	height:65px;
+	max-width:60rem;
+
+	/*Styling*/
+	font-size:clamp(1rem, 2.5vw, 1.4rem);
+	color:grey;
+	padding:20px;
+	border: none;
+	background:#f2f2f2;
+	font-family:'Press Start 2P';
+
+	/*Shading*/
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+
+/*Hidden input for small windows*/
+#search-div .search-bar-small{
+
+	/*Positioning and visibility*/
+	position:fixed;
+	bottom:0%;
+	visibility:hidden;
+
+}
+
+/*Container for the submission button*/
+#submission-container{
+
+	/*Positioning*/
+	position:fixed;
+	top:24em;
+	z-index:1000;
+	text-align:center;
+
+	/*Dimensions*/
+	width:100%;
+	height:0em;
+}
+
+/*Submission button*/
+#submission-container .download-button-large{
+
+	/*Dimensions*/
+	font-size:20px;
+	width:13em;
+	height:4.3em;
+	border-radius:0px;
+	margin:0 auto;
+	line-height:4.3em;
+
+	/*Styling*/
+	text-align:center;
+	color:gray;
+	border:none;
+	border:10px ;
+	background:#f2f2f2;
+	font-family:'Press Start 2P';
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+	/*make button unselectable*/
+	-moz-user-select: -moz-none;
+   	-khtml-user-select: none;
+   	-webkit-user-select: none;
+
+}
+
+/*Small submission button hidden*/
+#submission-container .download-button-small{
+
+	/*Positioning and visibility*/
+	position:fixed;
+	bottom:0%;
+	visibility:hidden;
+
+}
+
+/*Download icon within submission button*/
+#submission-container #submission-button span{
+	vertical-align: middle;
+	font-size:1.4em;
+	margin-bottom:.35em;
+	margin-left:.4em;
+}
+
+/*Submission button hover action*/
+#submission-container #submission-button:hover{
+
+	/*Styling*/
+	color:black;
+	box-shadow: 0 6px 9px rgba(0,0,0,0.16), 0 6px 9px rgba(0,0,0,0.23);
+
+	/*Transitions*/
+	transition: all 200ms;
+
+}
+
+/*Submission button active action*/
+#submission-container #submission-button:active{
+
+	/*Styling*/
+	box-shadow: 0 2px 2px rgba(0,0,0,0.16), 0 2px 2px rgba(0,0,0,0.23);
+	border:none;
+
+	/*Transitions*/
+	transition: all 200ms;
+
+}
+
+/*Container for the paste link button*/
+.paste-container-shown{
+
+	/*Positioning*/
+	position:fixed;
+	top:15em;
+	left:0%;
+	width:100%;
+	height:7em;
+	text-align:center;
+	line-height:2em;
+	
+}
+
+/*Hidden paste container*/
+.paste-container-hidden{visibility:hidden;}
+
+/*Paste link for minimized screen*/
+#paste-link-button{
+
+	/*Positioning*/
+	margin:0 auto;
+	z-index:20000;
+
+	/*Dimensions*/
+	width:15em;
+	height:15em;
+
+	/*Styling*/
+	background:white;
+	font-family:'Press Start 2P';
+	display: inline-block;
+	color:grey;
+	box-shadow: 0 6px 9px rgba(0,0,0,0.16), 0 6px 9px rgba(0,0,0,0.23);
+
+}
+
+#paste-link-button:hover{
+	
+	color:black;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+
+/*Text within paste button*/
+#paste-link-button span{
+	font-size:6em;
+	margin-bottom:.2em;
+}
+
+#paste-link-button #paste-link-text{
+	margin-top:2em ;
+}
+
+
+/*Modal background overlay*/
+#modal-overlay{
+
+	/*Dimensions*/
+	width:100%;
+	height:100%;
+
+	/*Positioning*/
+	position:fixed;
+	z-index:10000;
+	left:0%;
+	top:0%;
+	visibility:hidden;
+	text-align:center;
+
+	/*Coloring*/
+	background:black;
+	opacity: .8;
+
+}
+
+/*Actual div containing the modal*/
+.large-modal{
+
+	/*Positioning*/
+	position:relative;
+	z-index:20000;
+	margin:0 auto;
+	margin-top:7em;
+	visibility: hidden;
+	text-align:center;
+
+	/*Dimensions*/
+	width:40em;
+	height:70em;
+	max-height:38.5em;
+
+	/*Coloring*/
+	background:#b31217;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+	/*Transition*/
+	transition: all 200ms;
+
+}
+
+/*a full screen modal for smaller displays*/
+.small-modal{
+
+	/*Positioning*/
+	position:fixed;
+	z-index:20000;
+	margin:0 auto;
+	visibility: hidden;
+	text-align:center;
+
+	/*Dimensions*/
+	width:100%;
+	height:100%;
+
+	/*Coloring*/
+	background:#b31217;
+
+	/*Transition*/
+	transition: all 200ms;
+
+}
+
+.small-modal #toggle-switch{
+
+	/*Positioning*/
+	position:relative;
+	top:1.7em;
+	margin:0 auto;
+
+	/*Dimensions*/
+	width:93%;
+	height:3em;
+
+	/*Styling*/
+	border:none;
+	font-size:20px;
+	background:white;
+	color:gray;
+	font-family:'Press Start 2P';
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+
+/*When the button is active*/
+#submission-container input:focus {
+	outline: none;
+}
+
+#search-div input:focus {
+	outline: none;
+}
+
+/*Invisible modal*/
+.invisible-modal{
+	top:-100em;
+}
+
+/*Visibility for modal*/
+.visible-modal{
+	top:-20em;
+	transition: all 200ms;
+}
+
+.visible-modal-small{
+	top:0%;
+}
+
+/*Button within modal*/
+#modal #download-button{
+
+	/*Positioning*/
+	position:relative;
+	top:8.4em;
+
+	/*Dimensions*/
+	width:93%;
+	height:3em;
+	border-radius:0px;
+
+	/*Styling*/
+	border:none;
+	font-size:20px;
+	background:white;
+	color:gray;
+	font-family:'Press Start 2P';
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+/*Button within modal*/
+#modal #download-button:hover{
+
+	/*Positioning*/
+	color:black;
+	box-shadow: 0 6px 9px rgba(0,0,0,0.16), 0 6px 9px rgba(0,0,0,0.23);
+
+}
+
+/*Styling for mp3 mp4 toggle switch*/
+#toggle-switch{
+
+	/*Positioning*/
+	position:relative;
+	top:1.7em;
+	margin:0 auto;
+
+	/*Dimensions*/
+	width:93%;
+	height:3em;
+
+	/*Styling*/
+	border:none;
+	font-size:20px;
+	background:white;
+	color:gray;
+	font-family:'Press Start 2P';
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+
+/*Styling for tiles within toggle switch*/
+#toggle-switch #left-tile{
+
+	/*Dimensions*/
+	width:50%;
+	height:3em;
+
+	/*Positioning*/
+	float:left;
+	text-align:center;
+	line-height:3em;
+
+	/*Styling*/
+	box-sizing: border-box;
+
+}
+#toggle-switch #right-tile{
+
+	/*Dimensions*/
+	width:50%;
+	height:3em;
+
+	/*Positioning*/
+	float:right;
+	text-align:center;
+	line-height:3em;
+
+	/*Styling*/
+	box-sizing: border-box;
+}
+
+/*Class that defines a focused vs unfocused tile*/
+.focused-tile{
+
+	/*Styling*/
+	border-bottom:5px solid black;
+	color:black;
+
+}
+
+/*Hover effects for selector tiles*/
+#toggle-switch .unfocused-tile:hover{
+
+	/*Styling*/
+	border-bottom:5px solid #ccc;
+
+}
+
+/*Styling for audio checkbox*/
+#audio{
+
+	/*Positioning*/
+	position:fixed;
+	bottom:0%;
+	visibility:hidden;
+
+}
+
+/*Styling for the modal exit button*/
+#modal #modal-exit{
+
+	/*Dimensions*/
+	width:2em;
+	height:2em;
+	line-height: 1.75em;
+
+	/*Positioning*/
+	position:absolute;
+	right:3.4%;
+	top:3.4%;
+	text-align:center;
+
+	/*Coloring*/
+	color:gray;
+	background:white;
+
+	/*Styling*/
+	font-family:'Press Start 2P';
+	font-size:30px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+	/*Transitions*/
+	transition: all 200ms;
+
+}
+
+/*Span within modal exit button*/
+#modal #modal-exit span{
+
+	/*Positioning*/
+	margin:0 auto;
+	text-align: center;
+
+}
+
+/*Hover effects for modal exit button*/
+#modal #modal-exit:hover{
+
+	/*Styling*/
+	color:black;
+
+	/*Transitions*/
+	transition: all 200ms;
+
+}
+
+/*Styling for the modal exit button*/
+#modal #modal-settings{
+
+	/*Dimensions*/
+	width:2em;
+	height:2em;
+	line-height: 1.75em;
+
+	/*Positioning*/
+	position:absolute;
+	right:15%;
+	top:3.4%;
+	text-align:center;
+
+	/*Coloring*/
+	color:gray;
+	background:white;
+
+	/*Styling*/
+	font-family:'Press Start 2P';
+	font-size:30px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+	/*Transitions*/
+	transition: all 200ms;
+
+}
+
+/*Modal clip button hover*/
+#modal #modal-settings:hover{
+
+	/*Styling*/
+	color:black;
+
+	/*Transitions*/
+	transition: all 200ms;
+
+}
+
+/*Thumbnail image within modal*/
+#modal .standard-thumbnail{
+
+	/*Positioning*/
+	position:relative;
+	top:4em;
+
+	/*Dimensions*/
+	width:37.2em;
+	height:19.69em;
+	border-radius:0px;
+
+	/*Style*/
+	box-shadow: 0 6px 9px rgba(0,0,0,0.16), 0 6px 9px rgba(0,0,0,0.23);
+
+}
+
+/*Title box within modal*/
+#modal .small-title{
+
+	/*Positioning*/
+	position:relative;
+	top:5%;
+	left:0%;
+	text-align:left;
+
+	/*Dimensions*/
+	width:100%;
+}
+
+/*Video title within title div*/
+#modal .small-title .small-primary{
+
+	/*Dimensions*/
+	width:70%;
+
+	/*Positioning*/
+	margin-left:1.4em;
+	margin-top:2em;
+	margin-bottom:.7em;
+
+	/*Sizing*/
+	font-size:1em;
+
+	/*Style*/
+	color:white;
+	font-style: italic;
+	font-family:'Press Start 2P';
+	text-overflow: none;
+	white-space: nowrap;
+  	overflow: hidden;
+  	-webkit-mask-image: linear-gradient(90deg, #000 90%, transparent);
+
+  	/*Make text unselectable*/
+	-moz-user-select: -moz-none;
+   	-khtml-user-select: none;
+   	-webkit-user-select: none;
+
+
+}
+
+/*Video title within title div*/
+#modal .small-title .small-channel{
+
+	/*Positioning*/
+	margin-left:1.5em;
+
+	/*Dimensions*/
+	width:70%;
+
+	/*Style*/
+	color:white;
+	font-family:'Press Start 2P';
+	font-size:1em;
+	text-overflow: none;
+	white-space: nowrap;
+	overflow: hidden;
+  	-webkit-mask-image: linear-gradient(90deg, #000 90%, transparent);
+
+}
+
+/*Actual author span*/
+#modal .small-title #author{
+
+	/*Style*/
+	font-style:italic;
+
+}
+
+/*A large settings bar*/
+.settings-large{
+
+	/*Positioning*/
+	position:relative;
+	z-index:70000;
+	bottom:0%;
+	text-align:center;
+	margin: 0 auto;
+
+	/*Dimensions*/
+	height:5em;
+	width:19rem;
+	margin:auto;
+
+	/*Styling*/
+	background:#b31217;
+	box-shadow: 0 6px 9px rgba(0,0,0,0.16), 0 6px 9px rgba(0,0,0,0.23);
+
+	/*Transition*/
+	transition:all 200ms;
+
+}
+
+/*A settings bar that is hidden*/
+.settings-hidden{
+
+	/*Positioning*/
+	top:-7em;
+
+	/*Transitions*/
+	transition: all 100ms;
+
+}
+
+/*A settings bar that is shown*/
+.settings-shown{
+
+	/*Positioning*/
+	top:0em;
+
+	/*Transitions*/
+	transition: all 100ms;
+}
+
+/*Title within the settings div*/
+.large-settings-title{
+
+	/*Positioning*/
+	position:relative;
+	top:1.7em;
+	text-align:left;
+
+	/*Dimensions*/
+	width:100%;
+	height:7em;
+
+	/*Text styling*/
+	color:white;
+	font-size:1.3em;
+	font-family:'Press Start 2P';
+}
+
+/*Container for settings bar*/
+#settings-container{
+
+	position:fixed;
+	z-index:70000;
+	top:0em;
+	width:100%;
+	text-align:center;
+
+	/*Transition*/
+	transition: all 200ms;
+
+}
+
+/*Title text within settings div*/
+.large-settings-title #settings-title-text{
+
+	/*Positioning*/
+	margin-left:2em;
+
+}
+
+.large-settings-title #title-icon{
+
+	/*Positioning*/
+	margin-bottom:.1em;
+	margin-left:.5em;
+	vertical-align: middle;
+
+	/*Sizing*/
+	font-size:1.65em;
+
+}
+
+/*Back button within the settings div*/
+.settings-back-button-large{
+
+	/*Dimensions*/
+	width:2em;
+	height:2em;
+	line-height: 1.75em;
+
+	/*Positioning*/
+	position:absolute;
+	right:3.2%;
+	top:3%;
+	text-align:center;
+
+	/*Coloring*/
+	color:gray;
+	background:white;
+
+	/*Styling*/
+	font-family:'Press Start 2P';
+	font-size:30px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+	/*Transitions*/
+	transition: all 200ms;
+}
+
+/*Hover effects for settings back button*/
+.settings-back-button-large:hover{
+
+	/*Styling*/
+	color:black;
+
+	/*Transitions*/
+	transition: all 200ms;
+
+}
+
+/*Selector within settings div*/
+#internal-selector{
+
+	/*Dimensions*/
+	width:16em;
+	height:3em;
+	margin-top:.9em;
+	padding-left:1em;
+	padding-right:1em;
+
+	/*Font Styling*/
+	font-size:1em;
+	font-family:'Press Start 2P';
+	text-align:center;
+
+	/*Styling*/
+	border:none;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	
+
+}
+
+#internal-selector:active{
+
+	border:none;
+
+}
+
+/*Shake animation for download button*/
+
+.shaking-button{
+	animation: shake 0.82s cubic-bezier(.1,.1,.1,.1) both;
+  	transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+	10%, 90% {
+		transform: translate3d(-2px, 0, 0);
+	}
+	  
+	20%, 80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%, 50%, 70% {
+		transform: translate3d(-2px, 0, 0);
+	}
+
+	40%, 60% {
+		transform: translate3d(2px, 0, 0);
+	}
+}
+
+.glow-button {
+    animation-name: glowing 0.82s cubic-bezier(.1,.1,.1,.1) both;
+    animation-iteration-count: infinite;
+}
+
+@keyframes glowing {
+	0% {
+	    background-color: #2ba805;
+	    box-shadow: 0 0 3px #2ba805;
+	}
+	50% {
+		background-color: #49e819;
+	    box-shadow: 0 0 10px #49e819;
+	}
+	100% {
+		background-color: #2ba805;
+		box-shadow: 0 0 3px #2ba805;
+	}
+}
+
