@@ -23,13 +23,16 @@
 <!--CSS Stylesheets-->
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
 
+<!--Fontisto-->
+<link rel="stylesheet" href="{% static 'css/fontisto-master/css/fontisto/fontisto.min.css' %}">
+
 <!--Native javascript-->
 <script type="text/javascript" src="{% static 'javascript/main.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascript/scalable.js' %}"></script>
 
 <html>
 	<head>
-		
+	
 		<title>YT Downloader 1.0</title>
 
 	</head>
@@ -110,8 +113,11 @@
 						<!--Youtube thumbnail image, empty initially-->
 						<img src="" id="thumbnail" class="standard-thumbnail">
 
+						<!--Phony download button div-->
+						<div id="download-button">Download<span class="fas fa-download"></span></div>
+
 						<!--Actual Download Button-->
-						<input type="submit" value="Download" id="download-button">
+						<input type="submit" value="Download" id="download-button-actual">
 
 						<!--Toggle switch for mp3 and mp4 downloads, contains two sub-divs for right and left tiles-->
 						<div id="toggle-switch">
@@ -160,7 +166,7 @@
 			</form>
 		{% endblock %}
 
-			<div id="loading-div" class="loading-div-large">
+			<div id="loading-div" class="loading-div-large loading-div-hidden">
 				<span id="loading-text"></span>
 				<span id="loading-animation"></span> 
 			</div>

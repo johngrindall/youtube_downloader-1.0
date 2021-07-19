@@ -363,6 +363,7 @@ body{
 	/*Positioning*/
 	position:relative;
 	top:8.4em;
+	margin:0 auto;
 
 	/*Dimensions*/
 	width:93%;
@@ -376,6 +377,18 @@ body{
 	color:gray;
 	font-family:'Press Start 2P';
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	line-height:3em;
+}
+
+/*Logo within the modal download button*/
+#modal #download-button span{
+
+	/*Alignment*/
+	vertical-align: middle;
+	font-size:1.4em;
+	margin-bottom:.17em;
+	margin-left:.4em;
+
 }
 
 /*Button within modal*/
@@ -392,7 +405,7 @@ body{
 
 	/*Positioning*/
 	position:relative;
-	top:1.7em;
+	top:.7em;
 	margin:0 auto;
 
 	/*Dimensions*/
@@ -849,5 +862,13 @@ body{
 		background-color: #2ba805;
 		box-shadow: 0 0 3px #2ba805;
 	}
+}
+
+/*Actual download button*/
+#download-button-actual{
+
+	/*Visibility and position*/
+	visibility:hidden;
+
 }
 

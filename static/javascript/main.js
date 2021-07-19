@@ -187,6 +187,20 @@ function settingsShow(e){
 
 }
 
+//Function that programatically submits the form and engages the loading action
+function submit(){
+
+	//Select and programatically click actual submission button
+	var download_button = document.getElementById("download-button-actual");
+	var download_button_phony = document.getElementById("download-button");
+	download_button.click();
+
+	//Engage the loading animation within the button
+	console.log("Altering button text");
+	download_button_phony.innerHTML = "Loading<span class='fi fi-spinner-refresh fi-spin'></span>";
+
+}
+
 //Function that pastes contents and hits go.
 async function pasteFunction() {
 
@@ -205,23 +219,13 @@ async function pasteFunction() {
 window.onload = function(){
 
 	//Set click events of all relevant
-	var submission_button = document.getElementById("submission-button");
-	submission_button.onclick = slideUp;
-
-	var modal_overlay = document.getElementById("modal-overlay");
-	var modal_exit = document.getElementById("modal-exit");
-	modal_exit.onclick = slideDown;
-
-	var mp3_tile = document.getElementById("left-tile");
-	var mp4_tile = document.getElementById("right-tile");
-	mp3_tile.onclick = setMp3;
-	mp4_tile.onclick = setMp4;
-
-	var modal_settings = document.getElementById("modal-settings");
-	modal_settings.onclick = settingsShow; 
-
-	var paste_button = document.getElementById("paste-link-button");
-	paste_button.onclick = pasteFunction;
+	document.getElementById("submission-button").onclick = slideUp;;
+	document.getElementById("modal-exit").onclick = slideDown;;
+	document.getElementById("left-tile").onclick = setMp3;
+	document.getElementById("right-tile").onclick = setMp4;
+	document.getElementById("modal-settings").onclick = settingsShow;
+	document.getElementById("paste-link-button").onclick = pasteFunction;
+	document.getElementById("download-button").onclick = submit;
 
 	console.log("Main.js Loaded");
 
