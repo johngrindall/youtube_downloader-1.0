@@ -1,1 +1,1 @@
-A simple Django-based YouTube Downloader
+A simple Pytube and Django-based YouTube Downloader. 
